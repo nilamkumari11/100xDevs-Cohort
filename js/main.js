@@ -102,12 +102,7 @@ setTimeout(() => {
   console.log(`Time elapsed: ${elapsed} milliseconds`);
 }, 2000);  // Set the timeout to 1000 milliseconds (1 second)
 
-
-
-
 //Terminal Clock
-
-
 
 function clock(){
 
