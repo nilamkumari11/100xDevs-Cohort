@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest</title>
+    <script>
+        async function Calc(){
+            const p = document.getElementById("P").value;
+            const r = document.getElementById("R").value;
+            const t = document.getElementById("T").value;
+
+            const response = await fetch("http://localhost:3000/interest?principal=" + p + "&rate=" + r + "&time=" + t);
+
+            const ans = await response.text();
+            document.getElementById("SI").innerHTML = ans;
+        } 
+    </script>
+</head>
+<body>
+    <input id="P" type="text" placeholder="Principal"> <br> <br>
+    <input id="R" type="text" placeholder="Rate"> <br> <br>
+    <input id="T" type="text" placeholder="Time"> <br> <br>
+    <button onclick="Calc()">Calc SI</button> <br> <br>
+    <div id="SI"></div> <br> <br>
+</body>
+</html>
