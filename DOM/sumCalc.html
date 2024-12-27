@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function calcSum(){
+            //document
+            let a = document.getElementById("firstNum").value;
+            let b = document.getElementById("secondNum").value;
+            const element = document.getElementById("finalSum");
+            element.innerHTML = parseInt(a)+parseInt(b);
+            
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc Sum</title>
+</head>
+<body>
+    <input id="firstNum" type="text" placeholder="First Number">
+    <br>
+    <br>
+    <input id="secondNum" type="text" placeholder="Second Number">
+    <br>
+    <br>
+    <button onclick="calcSum()">Calculate sum </button>
+    <br> <br>
+    <div id="finalSum"></div>
+</body>
+</html>
