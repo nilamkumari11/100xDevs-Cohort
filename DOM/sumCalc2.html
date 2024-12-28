@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+    <script>
+        //axios
+        async function populateDiv() {
+            //connected through backend
+            // fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            //     .then(function(response){
+            //         response.text()
+            //             .then(function(ans){
+            //                 document.getElementById("finalSum").innerHTML = ans;
+            //             })
+            //     })
+
+                //async await syntax
+            const a = document.getElementById("firstNum").value;
+            const b = document.getElementById("secondNum").value;
+
+            const response = await fetch(`http://localhost:3000/sum?a=${a}&b=${b}`);
+                
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML = ans;
+        }
+    </script>
+</head>
+<body>
+    <input id="firstNum" type="text" placeholder="First Number"><br><br>
+    <input id="secondNum" type="text" placeholder="Second Number"><br><br>
+    <button onclick="populateDiv()">Calculate</button><br><br>
+    <div id="finalSum"></div>
+</body>
+</html>
