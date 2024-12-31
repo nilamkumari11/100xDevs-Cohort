@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+    <!-- //debouncing, throtlling -->
+    <script>
+        //once
+        function debouncePopulateDiv(){
+            //delay the call to populateDiv() untill I've not been called for 100ms
+            // and I've been called atleast once
+
+            //how do we cancel a clock?
+            // clearTimeout
+            clearTimeout(timeout);
+            const timeout = setTimeout(function(){
+                populateDiv();
+            }, 100);
+        }
+        async function populateDiv() {
+            const a = document.getElementById("firstNum").value;
+            const b = document.getElementById("secondNum").value;
+
+            const response = await fetch(`http://localhost:3000/sum?a=${a}&b=${b}`);
+                
+            const ans = await response.text();
+            document.getElementById("finalSum").innerHTML = ans;
+        }
+    </script>
+</head>
+<body>
+    <!--if I want that whenever input is changed it give me output without clicking the button-->
+    <!-- in that case we use function oninput -->
+    <input oninput="populateDiv()" id="firstNum" type="text" placeholder="First Number"><br><br>
+    <input oninput="populateDiv()" id="secondNum" type="text" placeholder="Second Number"><br><br>
+    <div id="finalSum"></div>
+</body>
+</html>
