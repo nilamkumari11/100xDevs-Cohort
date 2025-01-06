@@ -1,0 +1,58 @@
+<html>
+     <script>
+
+        let globalId = 1;
+        function addTodo() {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            // console.log(title);
+            // console.log(description); 
+            // const originalHtml = document.getElementById("container").innerHTML;
+            //ugly way
+            // document.getElementById("container").innerHTML = originalHtml + `<div>
+            //     <div>${title}</div>
+            //     <div>${description}</div>
+            //     <button>Mark as done</button>
+            // </div>`
+
+            // document.createElement
+            // const childDiv = document.createElement("div"); // creates DOM div element in memory, not part of DOM
+            // childDiv.innerHTML = title;
+            // document.getElementById("container").appendChild(childDiv); // appended in outer div
+
+            const parent = document.getElementById("container");
+                parent.appendChild(createChild(title, description, globalId++)); 
+            }
+
+            function markAsDone(todoId) {
+                const parent = document.getElementById(todoId);
+                parent.children[2].innerHTML = "Done!";
+            }
+            function createChild(title, description, id) {
+                const child = document.createElement("div");
+                const firstChild = document.createElement("div");
+                firstChild.innerHTML = title;
+                const secondChild = document.createElement("div");
+                secondChild.innerHTML = description;
+                const thirdChild = document.createElement("button");
+                thirdChild.innerHTML = "Mark As Done";
+                thirdChild.setAttribute("onclick",`markAsDone(${id})`);
+                child.appendChild(firstChild);
+                child.appendChild(secondChild);
+                child.appendChild(thirdChild);
+                child.setAttribute("id", id);
+                return child;
+            }
+     </script>
+    <div>
+        <input type="text" placeholder="title" id="title"> </input>
+        <br></br>
+        <input type="text" placeholder="decription" id="description"> </input>
+        <br></br>
+        <button onclick="addTodo()">Add todo</button>
+        <br></br>
+        <div id="container">
+             
+        </div>
+    </div>
+</html>
