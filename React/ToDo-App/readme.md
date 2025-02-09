@@ -10,5 +10,4 @@ It has the following features-
 - A user can see their existing Todos
 - A user can mark a Todo
 
-// Initialise a node project
-// put package.json
+
