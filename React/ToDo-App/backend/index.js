@@ -4,6 +4,8 @@ const { MongoServerClosedError, ServerDescription } = require("mongodb");
 const { todo } = require("./db");
 const app = express();
 app.use(express.json());
+const cors = require("cors");
+app.use(cors());
 
 app.post("/todo", async function(req, res){
     const createPayLoad = req.body;
