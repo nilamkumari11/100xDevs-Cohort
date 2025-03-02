@@ -17,6 +17,12 @@ app.get('/todos', (req, res) => {
     res.json(todos);
 });
 
+app.get('/todo/:id' , (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = todos.find(todo => todo.id === id);
+  res.json(todo);
+})
+
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
