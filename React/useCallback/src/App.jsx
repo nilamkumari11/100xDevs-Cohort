@@ -1,16 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useCallback, useState } from 'react'
 import './App.css'
 import { memo } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  function logSomething(){
+  const logSomething= useCallback(()=>{
     console.log("Child clicked");
     
-  }
+  },[])
 
   return <div>
     <ButtonComponent inputFunction={logSomething}></ButtonComponent>
@@ -21,6 +19,7 @@ function App() {
   
 }
 
+//child re renders as raw function changes without useCallback
 const ButtonComponent = memo(({inputFunction}) => {
   console.log("Child render");
   
