@@ -69,6 +69,7 @@ function App() {
 
 // count not passed here 
 function Count({setCount}){  
+  console.log("count-rerender");
   return <>
     <CountRenderer />
     <Buttons  setCount={setCount}/>
