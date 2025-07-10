@@ -44,7 +44,7 @@ function Count(){
 // when a state valriable needs to be defined and used in the same component 
 // for global sates (thing that actually create application) use recoil
 function Input() {
-  const [inputValue, setInputValue] = useState("");
+  const [setInputValue] = useState("");
   return <>
     <input onChange={(e) => {
         setInputValue(e.target.value) // input button that filters a few string
