@@ -12,7 +12,7 @@ function App() {
 }
 
 function MainApp(){
-  const [networkCount, setNetworkCount] = useRecoilState(notifications)
+  const [networkCount] = useRecoilState(notifications)
   const totalNotificationCount = useRecoilValue(totalNotificationSelector);
 
   // this will now be in atom.js -> all backend logic in atom.js
