@@ -12,6 +12,9 @@ const todos = [
   { id: 5, title: "Todo 5", description: "This is todo 5" }
 ];
 
+const notifications = {"network" : 8, "jobs" : 7, "messaging" : 0, "notification" : 0}
+
+
 // Define a GET route to fetch todos
 app.get('/todos', (req, res) => {
     res.json(todos);
@@ -21,6 +24,10 @@ app.get('/todo/:id' , (req, res) => {
   const id = parseInt(req.params.id);
   const todo = todos.find(todo => todo.id === id);
   res.json(todo);
+})
+
+app.get('/notifications', (req, res) => {
+    res.json(notifications);
 })
 
 app.listen(3000, () => {
