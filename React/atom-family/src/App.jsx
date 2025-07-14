@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 //atoms work only for one state
 // for all todos to hit diffrent atoms, atom to each 
 //atom family is a function that creates atom
+//when we need TODOS from backend. then we use selector family 
 
 function App() {
   return <RecoilRoot>
