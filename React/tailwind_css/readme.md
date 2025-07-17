@@ -28,14 +28,17 @@ style = {{display:"flex, ustifyContent:"centre"}}
  # tailwind -> syntax
 
  - in tailwind, we write it like 
- - <div class="flex">
-  -   <div class="w-14 flex-none ...">01</div>
-   -  <div class="w-64 flex-1 ...">02</div>
-    - <div class="w-32 flex-1 ...">03</div>
- - </div> 
+
+```html
+<div class="flex">
+  <div class="w-14 flex-none ...">01</div>
+  <div class="w-64 flex-1 ...">02</div>
+  <div class="w-32 flex-1 ...">03</div>
+</div>
 
 - in react it is written as -> 
-- <div className = 'flex'>
+```html
+ <div className = 'flex'>
  we cannot write class becuase class is keyword in js
 
 --------------------------------------------------------------------------------------
