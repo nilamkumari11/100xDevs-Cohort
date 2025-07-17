@@ -1,8 +1,11 @@
 # Flex
 ---------------------------------------------------------------------------
 flex lets us position elements just next to each other 
+
  multiples divs can be placed right next to each other if we are using flex box
+
  if flex is removed they are placed one below the other
+ 
  style = {{display:"flex}}
 - ----------------------------------------------------------
 to space them equally and no space at start and end 
