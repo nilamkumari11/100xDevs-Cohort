@@ -50,4 +50,42 @@ style = {{display:"flex, ustifyContent:"centre"}}
 
 ---------------------------------------------------------------------------------------------
 
-# responsiveness 
+# Responsiveness 
+changes width based of size of window 
+
+|   breakpoint prefix |  minimum width   |    css    |
+| --------------------|------------------|-----------|
+|        sm           |     640px        | '@media (min-width: 640px) {...}' |
+|        md           |     768px        |                |
+|        lg           |     1024px       |                 |
+|        xl           |     1280px       |              |
+|        2xl          |     1536px       |              |
+
+# mobile first 
+---------------------------
+- tailwind uses mobile first breakpoint system  
+it means that unprefixed utlities take effect on all screen sizes  
+prefixed utilities(md) take effect at that breakpoint and above  
+that is if we write  
+```html
+<div class='sm:text-centre'></div>
+```
+it means text will be centre for sm break point and all above, md lg etc.  
+so we use unprefixed utilities to target mobile, and override larger  
+```html
+<div class='text-centre sm:text-left'></div>
+```
+here, tect is in centre for sm(mobile), but for above small it will be in left 
+
+------------------------------------------------------
+### colour System 
+here we write from 50 - 1000 in shades of colour from light to dark  
+```html
+<div className='bg-green-500 text-red-500 text-md'>hi there from div one</div>
+```  
+text sizes as xs md lg xl 2xl  
+- radius border  
+rounded  
+rounded-md  
+rounded-lg  
+rounded-full  
