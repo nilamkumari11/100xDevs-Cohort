@@ -89,3 +89,9 @@ rounded
 rounded-md  
 rounded-lg  
 rounded-full  
+
+
+# dark theme
+```html
+<div className="bg-red-500 dark:bg-green-500">hi there</div> 
+```
