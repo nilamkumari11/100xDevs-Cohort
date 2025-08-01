@@ -102,3 +102,43 @@ When we dont want to open sorce a whole project but want someone to fix somethin
 It exposes componenets without rendering them in App.jsx  
 It brings lot of dependencies  
 To add storybook to vite-react 
+```
+npx storybook@latest init
+npm run storybook
+```
+
+----------------
+# Material UI (mui)
+UI framework that gives ready to use components from google Matrial Design  
+To install 
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+Use it in button -> example
+```jsx
+// App.jsx
+import React from 'react';
+import { Button } from '@mui/material';
+
+function App() {
+  return (
+    <div>
+      <Button variant="contained" color="primary">
+        Hello MUI
+      </Button>
+    </div>
+  );
+}
+
+export default App;
+```
+To import icons 
+```bash
+npm install @mui/icons-material
+```
+Use :
+```jsx
+import DeleteIcon from '@mui/icons-material/Delete';
+
+<Button startIcon={<DeleteIcon />}>Delete</Button>
+```
