@@ -58,7 +58,8 @@ function App() {
 <div className="flex bg-white-500">responsiveness task 1</div>
 
 <div className="grid grid-cols-1 md:grid-cols-3">
-  <div className="bg-red-500">hi there</div>
+  {/* green on dark theme */}
+  <div className="bg-red-500 dark:bg-green-500">hi there</div> 
   <div className="bg-yellow-500">hi there</div>
   <div className="bg-green-500">hi there</div>
 </div>

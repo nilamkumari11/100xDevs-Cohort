@@ -90,8 +90,15 @@ rounded-md
 rounded-lg  
 rounded-full  
 
-
+--------------------------
 # dark theme
 ```html
 <div className="bg-red-500 dark:bg-green-500">hi there</div> 
 ```
+
+---------------------
+# Storybook 
+When we dont want to open sorce a whole project but want someone to fix something... we can open source a single component and it is done using story book  
+It exposes componenets without rendering them in App.jsx  
+It brings lot of dependencies  
+To add storybook to vite-react 
